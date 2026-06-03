@@ -247,78 +247,7 @@ const uploadPy     = document.getElementById("upload-py");
 const sampleCode = `from robot_api import setmotor_speed1, setmotor_speed2, setmotor_speed3, setmotor_speed4
 
 # Ordre des moteurs : 1=avant-gauche, 2=avant-droit, 3=arriere-gauche, 4=arriere-droit
-# Vitesse en pourcentage dans [-100, 100]
-
-phase = 0.0
-
-
-def set_all(fl, fr, rl, rr):
-    setmotor_speed1(fl)
-    setmotor_speed2(fr)
-    setmotor_speed3(rl)
-    setmotor_speed4(rr)
-
-
-def stop():
-    set_all(0, 0, 0, 0)
-
-
-def avancer(v=70):
-    set_all(v, v, v, v)
-
-
-def reculer(v=70):
-    set_all(-v, -v, -v, -v)
-
-
-def strafe_droite(v=70):
-    # Mecanum : FL(-) FR(+) RL(+) RR(-)
-    set_all(-v, v, v, -v)
-
-
-def strafe_gauche(v=70):
-    set_all(v, -v, -v, v)
-
-
-def rotation_cw(v=60):
-    set_all(-v, v, -v, v)
-
-
-def rotation_ccw(v=60):
-    set_all(v, -v, v, -v)
-
-
-def diagonale_avant_droite(v1=20, v2=80):
-    # FR et RL rapides, FL et RR lents
-    set_all(v1, v2, v2, v1)
-
-
-def diagonale_avant_gauche(v1=80, v2=20):
-    # FL et RL rapides, FR et RR lents
-    set_all(v1, v2, v2, v1)
-
-
-def step(dt, state):
-    global phase
-    phase += dt
-    t = phase % 16.0
-
-    if t < 2.0:
-        avancer(70)
-    elif t < 4.0:
-        reculer(70)
-    elif t < 6.0:
-        strafe_droite(70)
-    elif t < 8.0:
-        strafe_gauche(70)
-    elif t < 10.0:
-        rotation_cw(60)
-    elif t < 12.0:
-        rotation_ccw(60)
-    elif t < 14.0:
-        diagonale_avant_droite(20, 80)
-    else:
-        diagonale_avant_gauche(80, 20)
+#c'est ici qu il faut mettre le code, merci d enregistre et de recupoerer les codes pour simu depuis cette adresse: https://github.com/Robocup-Phoenix-Team/RoboCup-Phoenix-Team/tree/main/Codes/python/codes%20simulateur
 `;
 
 /* ─── État robot / balle ────────────────────────────────────── */
